@@ -37,9 +37,9 @@ And then just simply run:
 python extract.py --csv=input.csv --type=2d --batch_size=64 --num_decoding_thread=4
 ```
 This command will extract 2d video feature for video1.mp4 (resp. video2.webm) at path_of_video1_features.npy (resp. path_of_video2_features.npy) in
-a form of a numpy array
+a form of a numpy array.
 To get feature from the 3d model instead, just change type argument 2d per 3d.
-The parameters --num_decoding_thread will set how many parallel cpu thread are used for the decoding of the videos.
+The parameter --num_decoding_thread will set how many parallel cpu thread are used for the decoding of the videos.
 
 Please note that the script is intended to be run on ONE single GPU only.
 if multiple gpu are available, please make sure that only one free GPU is set visible
@@ -47,13 +47,13 @@ by the script with the CUDA_VISIBLE_DEVICES variable environnement for example.
 
 # Can I use multiple GPU to speed up feature extraction ?
 
-Yes ! just run the same script on another GPU, and the script will only focus on processing the videos that have not been processed yet.
+Yes ! just run the same script on another GPU, and the script will create a new feature extraction process that will only focus on processing the videos that have not been processed yet without overlapping with the other extraction process already running.
 
 # What models are implemented ?
 So far, only one 2D and one 3D models can be used.
 
-- The 2D model is the pytorch model zoo ResNet-152 pretrained on ImageNet. The 2D features are extracted at 1 feature per second.
-- The 3D model is a ResNexT-101 (https://github.com/kenshohara/3D-ResNets-PyTorch) pretrained on Kinetics. The 3D features are extracted at 1.5 feature per second.
+- The 2D model is the pytorch model zoo ResNet-152 pretrained on ImageNet. The 2D features are extracted at 1 feature per second at the resolution of 224.
+- The 3D model is a ResNexT-101 16 frames (https://github.com/kenshohara/3D-ResNets-PyTorch) pretrained on Kinetics. The 3D features are extracted at 1.5 feature per second at the resolution of 112.
 
 # Acknowledgements
 The code re-used code from https://github.com/kenshohara/3D-ResNets-PyTorch
