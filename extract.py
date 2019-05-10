@@ -32,7 +32,7 @@ dataset = VideoLoader(
     args.csv,
     framerate=1 if args.type == '2d' else 24,
     size=224 args.type == '3d' else 112,
-    centercrop=(args.type == '3d')
+    centercrop=(args.type == '3d'),
 )
 n_dataset = len(dataset)
 sampler = RandomSequenceSampler(n_dataset, 10)
