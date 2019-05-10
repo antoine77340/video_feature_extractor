@@ -47,7 +47,7 @@ by the script with the CUDA_VISIBLE_DEVICES variable environnement for example.
 
 # Can I use multiple GPU to speed up feature extraction ?
 
-Yes ! just run the same script on another GPU, and the script will create a new feature extraction process that will only focus on processing the videos that have not been processed yet without overlapping with the other extraction process already running.
+Yes ! just run the same script with same input csv on another GPU (that can be from a different machine, provided that the disk to output the features is shared between the machines). The script will create a new feature extraction process that will only focus on processing the videos that have not been processed yet, without overlapping with the other extraction process already running.
 
 # What models are implemented ?
 So far, only one 2D and one 3D models can be used.
