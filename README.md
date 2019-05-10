@@ -9,7 +9,7 @@ by one, pre processing them and use a CNN to extract features on chunks of video
 This process is not efficient because of the dumping of frames on disk which is
 slow and can use a lot of inodes when working with large dataset of videos.
 
-To avoid having to do that, this repo provides a simple python script for that task: Just provide a list of raw videos and the script will take care of the fly video decoding and feature extraction using state-of-the-art models. While being fast, it also happen to be very convenient.
+To avoid having to do that, this repo provides a simple python script for that task: Just provide a list of raw videos and the script will take care of on the fly video decoding (with ffmpeg) and feature extraction using state-of-the-art models. While being fast, it also happen to be very convenient.
 
 This script is also optimized for multi processing GPU feature extraction.
 
