@@ -32,7 +32,7 @@ args = parser.parse_args()
 dataset = VideoLoader(
     args.csv,
     framerate=1 if args.type == '2d' else 24,
-    size=224 if args.type == '3d' else 112,
+    size=224 if args.type == '2d' else 112,
     centercrop=(args.type == '3d'),
 )
 n_dataset = len(dataset)
@@ -59,7 +59,7 @@ with th.no_grad():
                 video = preprocess(video)
                 n_chunk = len(video)
                 features = th.cuda.FloatTensor(n_chunk, 2048).fill_(0)
-                n_iter = math.ceil(n_chunk / float(args.batch_size))
+                n_iter = int(math.ceil(n_chunk / float(args.batch_size)))
                 for i in range(n_iter):
                     min_ind = i * args.batch_size
                     max_ind = (i + 1) * args.batch_size
