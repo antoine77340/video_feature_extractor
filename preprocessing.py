@@ -19,7 +19,7 @@ class Preprocessing(object):
         elif type == '3d':
             self.norm = Normalize(mean=[110.6, 103.2, 96.3], std=[1.0, 1.0, 1.0])
 
-    def self._zero_pad(self, tensor, size):
+    def _zero_pad(self, tensor, size):
         n = size - len(tensor) % size
         if n == size:
             return tensor

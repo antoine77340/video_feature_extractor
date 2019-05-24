@@ -7,6 +7,7 @@ import argparse
 from model import get_model
 from preprocessing import Preprocessing
 from random_sequence_shuffler import RandomSequenceSampler
+import torch.nn.functional as F
 
 parser = argparse.ArgumentParser(description='Easy video feature extractor')
 
@@ -31,7 +32,7 @@ args = parser.parse_args()
 dataset = VideoLoader(
     args.csv,
     framerate=1 if args.type == '2d' else 24,
-    size=224 args.type == '3d' else 112,
+    size=224 if args.type == '3d' else 112,
     centercrop=(args.type == '3d'),
 )
 n_dataset = len(dataset)
@@ -63,10 +64,10 @@ with th.no_grad():
                     min_ind = i * args.batch_size
                     max_ind = (i + 1) * args.batch_size
                     video_batch = video[min_ind:max_ind].cuda()
-                    features = model(video_batch)
+                    batch_features = model(video_batch)
                     if args.l2_normalize:
-                        features = F.normalize(features, dim=1)
-                    features[min_ind:max_ind] = features
+                        batch_features = F.normalize(batch_features, dim=1)
+                    features[min_ind:max_ind] = batch_features
                 features = features.cpu().numpy()
                 if args.half_precision:
                     features = features.astype('float16')
