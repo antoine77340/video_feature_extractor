@@ -24,7 +24,7 @@ parser.add_argument('--num_decoding_thread', type=int, default=4,
                             help='Num parallel thread for video decoding')
 parser.add_argument('--l2_normalize', type=int, default=1,
                             help='l2 normalize feature')
-parser.add_argument('--resnext101_model_path', type=str, default='model/resnext-101-kinetics.pth',
+parser.add_argument('--resnext101_model_path', type=str, default='/sequoia/data2/amiech/resnext101.pth',
                             help='Resnext model path')
 args = parser.parse_args()
 
@@ -41,7 +41,7 @@ loader = DataLoader(
     batch_size=1,
     shuffle=True,
     num_workers=args.num_decoding_thread,
-    sampler=sampler,
+    sampler=sampler if n_dataset > 10 else None,
 )
 preprocess = Preprocessing(args.type)
 model = get_model(args)

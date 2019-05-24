@@ -31,8 +31,7 @@ def get_model(args):
             last_fc=False)
         model = model.cuda()
         model_data = th.load(args.resnext101_model_path)
-        model = th.nn.DataParallel(model, device_ids=None)
-        model.load_state_dict(model_data['state_dict'])
+        model.load_state_dict(model_data)
 
     model.eval()
     print('loaded')
