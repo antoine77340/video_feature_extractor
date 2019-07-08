@@ -25,7 +25,7 @@ parser.add_argument('--num_decoding_thread', type=int, default=4,
                             help='Num parallel thread for video decoding')
 parser.add_argument('--l2_normalize', type=int, default=1,
                             help='l2 normalize feature')
-parser.add_argument('--resnext101_model_path', type=str, default='/sequoia/data2/amiech/resnext101.pth',
+parser.add_argument('--resnext101_model_path', type=str, default='model/resnext101.pth',
                             help='Resnext model path')
 args = parser.parse_args()
 

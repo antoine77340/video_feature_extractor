@@ -55,6 +55,16 @@ So far, only one 2D and one 3D models can be used.
 - The 2D model is the pytorch model zoo ResNet-152 pretrained on ImageNet. The 2D features are extracted at 1 feature per second at the resolution of 224.
 - The 3D model is a ResNexT-101 16 frames (https://github.com/kenshohara/3D-ResNets-PyTorch) pretrained on Kinetics. The 3D features are extracted at 1.5 feature per second at the resolution of 112.
 
+# Downloading pretrained models
+
+```sh
+mkdir model
+cd model
+wget https://www.rocq.inria.fr/cluster-willow/amiech/howto100m/models/resnext101.pth
+```
+
+
+
 # Acknowledgements
 The code re-used code from https://github.com/kenshohara/3D-ResNets-PyTorch
 for 3D CNN.
