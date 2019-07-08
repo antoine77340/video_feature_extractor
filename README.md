@@ -56,6 +56,7 @@ So far, only one 2D and one 3D models can be used.
 - The 3D model is a ResNexT-101 16 frames (https://github.com/kenshohara/3D-ResNets-PyTorch) pretrained on Kinetics. The 3D features are extracted at 1.5 feature per second at the resolution of 112.
 
 # Downloading pretrained models
+This will download the pretrained 3D ResNext-101 model we used from: https://github.com/kenshohara/3D-ResNets-PyTorch 
 
 ```sh
 mkdir model
