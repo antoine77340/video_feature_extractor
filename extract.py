@@ -40,7 +40,7 @@ sampler = RandomSequenceSampler(n_dataset, 10)
 loader = DataLoader(
     dataset,
     batch_size=1,
-    shuffle=True,
+    shuffle=False,
     num_workers=args.num_decoding_thread,
     sampler=sampler if n_dataset > 10 else None,
 )
