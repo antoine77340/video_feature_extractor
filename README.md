@@ -3,6 +3,9 @@
 This repo aims at providing an easy to use and efficient code for extracting
 video features using deep CNN (2D or 3D).
 
+It has been originally designed to extract video features for the large scale video dataset HowTo100M (https://www.di.ens.fr/willow/research/howto100m/) in an efficient manner.
+
+
 Most of the time, extracting CNN features from video is cumbersome.
 In fact, this usually requires dumping video frames into the disk, loading the dumped frames one
 by one, pre processing them and use a CNN to extract features on chunks of videos.
