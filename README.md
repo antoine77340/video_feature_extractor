@@ -29,7 +29,7 @@ want to process. For instance, if you have video1.mp4 and video2.webm to process
 you will need to generate a csv of this form:
 
 ```sh
-video_path, feature_path
+video_path,feature_path
 video1.mp4, path_of_video1_features.npy
 video2.webm, path_of_video2_features.npy
 ```
