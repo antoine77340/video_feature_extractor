@@ -20,7 +20,7 @@ This script is also optimized for multi processing GPU feature extraction.
 # Requirements
 - Python 3
 - PyTorch (>= 1.0)
-- python-ffmpeg (https://github.com/kkroening/ffmpeg-python)
+- ffmpeg-python (https://github.com/kkroening/ffmpeg-python)
 
 # How To Use ?
 
