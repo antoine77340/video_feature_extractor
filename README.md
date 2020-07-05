@@ -30,8 +30,8 @@ you will need to generate a csv of this form:
 
 ```
 video_path,feature_path
-video1.mp4,absolute_path_of_video1_features.npy
-video2.webm,absolute_path_of_video2_features.npy
+absolute_path_video1.mp4,absolute_path_of_video1_features.npy
+absolute_path_video2.webm,absolute_path_of_video2_features.npy
 ```
 
 And then just simply run:
